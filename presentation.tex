@@ -2,12 +2,14 @@
 % https://github.com/anishathalye/auriga
 
 \documentclass[14pt,aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
 \usepackage{pgfpages}
 \usepackage{fancyvrb}
 \usepackage{tikz}
 \usepackage{pgfplots}
 
-\ifnotes
+\if notes
 \setbeamertemplate{note page}[plain]
 \setbeameroption{show notes on second screen=right}
 \fi
@@ -20,11 +22,26 @@
 \definecolor{blue}{RGB}{0, 118, 186}
 \definecolor{gray}{RGB}{146, 146, 146}
 
-\title{Fancy Title: Followed by Some More Text}
+\newcommand{\mylink}[1]{{\small{\color{blue} [#1]}}}
 
-\author{\underline{Alyssa P. Hacker} \inst{1} \and Ben Bitdiddle \inst{2} \and Lem E. Tweakit \inst{2}}
+\title{\small{Small title}\\
+\vspace{0.3cm}
+\normalsize{Normal size title}
+}
 
-\institute[shortinst]{\inst{1} Some Institute \samelineand \inst{2} Another Institute}
+\author{\underline{Me} \inst{1} \and Other person \inst{2}}
+
+\institute[shortinst]{\inst{1} My Institute \samelineand \inst{2} Another Institute}
+
+
+\newcommand{\beginbackup}{
+	\newcounter{framenumbervorappendix}
+	\setcounter{framenumbervorappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+	\addtocounter{framenumbervorappendix}{-\value{framenumber}}
+	\addtocounter{framenumber}{\value{framenumbervorappendix}} 
+}
 
 \begin{document}
 
@@ -34,15 +51,54 @@
   \setbeamercolor{page number in head/foot}{fg=background canvas.bg}
   \begin{frame}
     \titlepage
+    {\centering\footnotesize A small comment in a footnote}\\
+    {\tiny
+    Email: {\color{blue} \href{mailto:myemail@example.com}{myemail@example.com}}}
   \end{frame}
 }
 
-\input{slides/bullets}
-\input{slides/split}
-\input{slides/figure}
-\input{slides/centered}
-\input{slides/monospace}
-\input{slides/brackets}
-\input{slides/link}
+\begin{frame}{Slide 1}
+\centering
+%\includegraphics[height=2cm]{image1}
+\end{frame}
+
+\begin{frame}{Slide 2}
+\centering
+%\includegraphics[height=2cm]{image2}
+\end{frame}
+
+\begin{frame}{Slide 3}
+\centering
+%\includegraphics[height=2cm]{image3}
+\end{frame}
+
+\begin{frame}{Slide 4}
+\centering
+%\includegraphics[height=2cm]{image4}
+\end{frame}
+
+\begin{frame}{Slide 5}
+\centering
+%\includegraphics[height=2cm]{image5}
+\end{frame}
+
+\begin{frame}
+\centering
+\Large{Thanks for listening!}
+%\includegraphics[height=2cm]{image6}
+\end{frame}
+
+
+%\beginbackup
+%\begin{frame}[allowframebreaks]{Список литературы}
+%	\bibliographystyle{apalike}
+%	{\tiny
+%		\bibliography{rpz}
+%	}
+%\end{frame}
+
+% for citations:
+% \footnotemark \footnotetext{${}^4${\cite{}}}
+% or \footnote{\cite{}}
 
 \end{document}

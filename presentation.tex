@@ -8,6 +8,9 @@
 \usepackage{fancyvrb}
 \usepackage{tikz}
 \usepackage{pgfplots}
+%\usepackage{emoji}
+%\usepackage[backend=biber,style=authoryear-icomp,citestyle=authoryear,autocite=footnote]{biblatex}
+%\addbibresource{References.bib}
 
 \if notes
 \setbeamertemplate{note page}[plain]
@@ -48,7 +51,7 @@
 {
   % rather than use the frame options [noframenumbering,plain], we make the
   % color match, so that the indicated page numbers match PDF page numbers
-  \setbeamercolor{page number in head/foot}{fg=background canvas.bg}
+  \setbeamercolor{page number in head/foot}{fg=black}
   \begin{frame}
     \titlepage
     {\centering\footnotesize A small comment in a footnote}\\
@@ -95,6 +98,7 @@
 %	{\tiny
 %		\bibliography{rpz}
 %	}
+% or \printbibliography
 %\end{frame}
 
 % for citations:

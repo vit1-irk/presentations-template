@@ -8,9 +8,16 @@
 \usepackage{fancyvrb}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{csquotes}
+\pgfplotsset{compat=1.18}
 %\usepackage{emoji}
 %\usepackage[backend=biber,style=authoryear-icomp,citestyle=authoryear,autocite=footnote]{biblatex}
 %\addbibresource{References.bib}
+\renewcommand*{\bibfont}{\normalfont\small}
+\pdfstringdefDisableCommands{%
+  \def\\{}%
+  \def\underline#1{<#1>}%
+}
 
 \if notes
 \setbeamertemplate{note page}[plain]
